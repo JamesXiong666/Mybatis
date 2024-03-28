@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+     namespace：必须有值，自定义的唯一字符串
+                推荐使用：dao接口的全限定名称
+-->
+<mapper namespace="com.james.dao.StudentDao">
+    <!--
+       <select>: 查询数据， 标签中必须是select语句
+              id:  sql语句的自定义名称，推荐使用dao接口中方法名称，
+                   使用名称表示要执行的sql语句
+     resultType: 查询语句的返回结果数据类型，使用全限定类名
+    -->
+    <select id="selectStudents" resultType="com.james.domain.Student">
+        <!--要执行的sql语句-->
+        select id,name,email,age from student
+    </select>
+</mapper>
