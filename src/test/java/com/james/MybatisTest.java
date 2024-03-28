@@ -152,5 +152,44 @@ public class MybatisTest {
         System.out.println("使用Dao修改数据:" + nums);
     }
 
+    //使用Dao代理对象方法 执行sql语句
+    StudentDao studentDao1 = MyBatisUtil.getSqlSession().getMapper(StudentDao.class);
+
+    //测试select方法
+    @Test
+    public void testSelect2() throws IOException {
+        final List<Student> studentList = studentDao1.selectStudents();
+        studentList.forEach(stu -> System.out.println(stu));
+    }
+
+    //测试insert方法
+    @Test
+    public void testInsert2() throws IOException {
+        Student student = new Student();
+        student.setId(1007);
+        student.setName("james789");
+        student.setEmail("james789@163.com");
+        student.setAge(28);
+        int nums = studentDao.insertStudent(student);
+        System.out.println("使用Dao添加数据:" + nums);
+    }
+
+    //测试update方法
+    @Test
+    public void testUpdate2() throws IOException {
+        Student student = new Student();
+        student.setId(1007);
+        student.setAge(28);
+        int nums = studentDao.updateStudent(student);
+        System.out.println("使用Dao修改数据:" + nums);
+    }
+
+    //测试delete方法
+    @Test
+    public void testDelete2() throws IOException {
+        int nums = studentDao.deleteStudent(1007);
+        System.out.println("使用Dao修改数据:" + nums);
+    }
+
 
 }

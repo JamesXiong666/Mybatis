@@ -1,6 +1,7 @@
 package com.james.dao;
 
 import com.james.common.MyBatisUtil;
+import com.james.domain.PrimaryStudent;
 import com.james.domain.Student;
 import org.apache.ibatis.session.SqlSession;
 
@@ -48,4 +49,5 @@ public class StudentDaoImpl implements StudentDao {
 
     }
 
+    
 }

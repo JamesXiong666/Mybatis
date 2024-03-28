@@ -34,4 +34,15 @@
         from student
         where id = #{id}
     </delete>
+
+    <resultMap id="studentMap" type="com.bjpowernode.domain.Student">
+        <!-- 主键字段使用id -->
+        <id column="id" property="id"/>
+        <!--非主键字段使用result-->
+        <result column="name" property="name"/>
+        <result column="email" property="email"/>
+        <result column="age" property="age"/>
+    </resultMap>
+
+
 </mapper>

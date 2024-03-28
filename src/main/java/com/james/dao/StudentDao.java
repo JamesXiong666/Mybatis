@@ -1,5 +1,6 @@
 package com.james.dao;
 
+import com.james.domain.PrimaryStudent;
 import com.james.domain.Student;
 
 import java.util.List;
@@ -16,4 +17,6 @@ public interface StudentDao {
 
     //delete
     int deleteStudent(int id);
+
+
 }
