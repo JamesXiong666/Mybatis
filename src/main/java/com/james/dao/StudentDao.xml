@@ -17,4 +17,21 @@
         <!--要执行的sql语句-->
         select id,name,email,age from student
     </select>
+
+    <insert id="insertStudent" parameterType="com.james.domain.Student">
+        insert into student(id, name, email, age)
+        values (#{id}, #{name}, #{email}, #{age})
+    </insert>
+
+    <update id="updateStudent" parameterType="com.james.domain.Student">
+        update student
+        set age=#{age}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteStudent">
+        delete
+        from student
+        where id = #{id}
+    </delete>
 </mapper>
